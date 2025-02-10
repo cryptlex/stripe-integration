@@ -15,8 +15,13 @@
     /* Type Checking */
     "noUncheckedIndexedAccess": true,                 /* Add 'undefined' to a type when accessed using an index. */
     "exactOptionalPropertyTypes": false,
-    "allowJs": true
+    "allowJs": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@shared-utils/*": ["utils/*"]
+    }
   },
-  "include": ["index.node.ts", "src/**/*.ts"],
+  "include": ["stripe/index.node.ts","fastspring/index.node.ts", "src/**/*.ts"],
   "extends": "@tsconfig/strictest/tsconfig.json"
 }

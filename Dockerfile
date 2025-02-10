@@ -3,9 +3,11 @@ FROM base AS builder
 
 WORKDIR /app
 
+ARG PAYMENT_PLATFORM
+
 COPY ./ ./
 
-RUN npm ci && npm run build:node
+RUN npm ci && npm run build:${PAYMENT_PLATFORM}:node
 
 FROM base AS runner
 WORKDIR /app

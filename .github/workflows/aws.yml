@@ -1,7 +1,15 @@
 name: Deploy AWS Lambda
 on: 
   workflow_dispatch:
-
+    inputs:
+      payment-platform:
+        description: 'The payment platform to be integrated with'
+        required: true
+        default: 'stripe'
+        type: choice
+        options:
+          - stripe
+          - fastspring
 jobs:
   deploy:
     name: Build and deploy lambda
@@ -19,7 +27,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm ci
-          npm run build:aws
+          npm run build:${{ input.payment-platform }}:aws
 
       - name: Zip lambda bundle
         uses: montudor/action-zip@v1

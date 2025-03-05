@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { CtlxClientType } from '../client';
+import { CtlxClientType } from './client';
 
 
 async function checkUserExists(email: string, client: CtlxClientType) {

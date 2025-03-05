@@ -1,0 +1,1 @@
+To run tests, a mock-server for the Cryptlex Web API needs to be generated first. Do the same using `npm run generate:mock-server` then run `npm run test:fastspring`.

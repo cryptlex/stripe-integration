@@ -1,12 +1,12 @@
 import { Hono } from 'hono';
 import { Stripe } from 'stripe';
 import { env } from 'hono/adapter';
-import { getAuthMiddleware } from './client';
 import { handleInvoicePaid } from './handlers/handleInvoicePaid';
 import { handleCheckoutSessionFlow } from './handlers/handleCheckoutSession';
 import { handleCustomerCreated } from './handlers/handleCustomerCreated';
 import createClient from 'openapi-fetch';
 import { paths } from '@cryptlex/web-api-types';
+import { getAuthMiddleware } from '@shared-utils/client';
 
 const app = new Hono()
 

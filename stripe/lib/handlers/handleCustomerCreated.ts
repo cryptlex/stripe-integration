@@ -1,7 +1,7 @@
+import { CtlxClientType } from "@shared-utils/client";
+import { HandlerReturn } from "@shared-utils/index";
+import { upsertUser } from "@shared-utils/userActions";
 import Stripe from "stripe";
-import { HandlerReturn } from "..";
-import { CtlxClientType } from "../client";
-import { upsertUser } from '../utils/userActions';
 
 export async function handleCustomerCreated({ event, client }: { event: Stripe.CustomerCreatedEvent, client: CtlxClientType }): HandlerReturn {
     const email = event.data.object.email;
